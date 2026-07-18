@@ -1,15 +1,10 @@
-# Zomato Restaurant Analytics (Bangalore)
+# Zomato Restaurant Analytics 
 
 ## Overview
 This project analyzes 51,632 real Zomato restaurant listings from Bangalore (8,792 unique restaurants across 30+ city areas) to uncover business insights around pricing, ratings, cuisine, and restaurant format — and builds a Random Forest classifier to predict whether a restaurant is likely to be highly rated.
 
 **Dataset:** [Zomato Bangalore Restaurants](https://www.kaggle.com/datasets/himanshupoddar/zomato-bangalore-restaurants) (Kaggle) — 51,717 raw rows × 17 columns, a scraped snapshot of Zomato listings (no date field, no customer/order IDs).
 
-## ⚠️ A Note on Scope & Honesty
-This dataset has **no revenue, order, or transaction data** — only restaurant-level fields (cost-for-two, votes, rating, cuisine, area, listing type). Because of this:
-- **"Votes"** (number of ratings a restaurant has received) is used throughout as a clearly-labeled **popularity/engagement proxy** — never presented as real revenue or order volume.
-- **"Approx. cost for two"** is used as-is; it's real menu pricing data, not a derived average order value.
-- A customer-churn model was originally considered but dropped, since there's no customer or order identifier anywhere in the dataset (confirmed by inspecting every column, including the free-text reviews field) — the project scope was adjusted to **restaurant rating/performance analysis** instead, which the data can actually support.
 
 ## 📂 Project Structure
 ```
@@ -55,7 +50,7 @@ This dataset has **no revenue, order, or transaction data** — only restaurant-
 - Top restaurants by votes, cost-by-area breakdown, listing-type performance, cuisine popularity, online-order and table-booking impact on rating/cost, area-level engagement concentration, restaurant-type performance, cost-bracket vs. rating, and "hidden gem" discovery (high rating, low visibility)
 - Full results saved in `zomato_query_results.txt`, each with a one-line rationale
 
-**4. Interactive Dashboard (`zomato_dashboard.html`)**
+**4. Interactive Dashboard **
 - Visual summary of the SQL/EDA findings for non-technical stakeholders
 
 **5. Predictive Modeling (`zomato_05_random_forest.py`)**
@@ -101,8 +96,3 @@ python zomato_run_queries.py        # runs the 10 SQL queries
 python zomato_05_random_forest.py   # trains & evaluates models
 ```
 
-## 📈 Future Improvements
-- Hyperparameter tuning (GridSearch/RandomizedSearch) for the Random Forest
-- Try Gradient Boosting (XGBoost/LightGBM) for comparison
-- Incorporate NLP on the free-text reviews field for sentiment-based features
-- If order/revenue data becomes available, revisit the originally-planned churn analysis
