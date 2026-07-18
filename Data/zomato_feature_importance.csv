@@ -1,0 +1,65 @@
+feature,importance
+votes,0.5532842712199394
+approx_cost_for_two,0.12824557159323263
+book_table,0.10892687569359265
+rest_type_bucketed_Quick Bites,0.048638665852047513
+online_order,0.023305082754628965
+cuisine_bucketed_Cafe,0.01798647090474458
+cuisine_bucketed_North Indian,0.015487821174187014
+rest_type_bucketed_Cafe,0.011113359351736685
+cuisine_bucketed_Other,0.009996298463063413
+rest_type_bucketed_Dessert Parlor,0.009334632527995023
+cuisine_bucketed_Desserts,0.007658495444679972
+rest_type_bucketed_Other,0.007623015316898161
+rest_type_bucketed_Casual Dining,0.007468856934362325
+cuisine_bucketed_Continental,0.005200669238413977
+cuisine_bucketed_Biryani,0.003811179364828557
+area_Electronic City,0.003250470135851664
+"rest_type_bucketed_Casual Dining, Bar",0.003213390899877403
+"rest_type_bucketed_Takeaway, Delivery",0.0030608010222161284
+listing_type_Delivery,0.0027540189934972654
+listing_type_Desserts,0.0023349348291352174
+rest_type_bucketed_Delivery,0.0023137476462605894
+cuisine_bucketed_South Indian,0.002018072472336933
+area_Brookefield,0.0017481310415768212
+listing_type_Dine-out,0.0017050853295766618
+listing_type_Cafes,0.0015609839747408477
+listing_type_Drinks & nightlife,0.0014563985499621533
+cuisine_bucketed_Bakery,0.0014098727149581842
+area_Marathahalli,0.0012858406171492554
+cuisine_bucketed_Fast Food,0.0011371059453666838
+area_Bannerghatta Road,0.0010000763643922112
+cuisine_bucketed_Chinese,0.000935537687234812
+cuisine_bucketed_Ice Cream,0.0008835323127035169
+cuisine_bucketed_Kerala,0.0008043903641096276
+cuisine_bucketed_Beverages,0.0007848907230023939
+cuisine_bucketed_Finger Food,0.0007332538256197654
+rest_type_bucketed_Bar,0.0005627948252285337
+area_Sarjapur Road,0.0005044153701774494
+area_Whitefield,0.0004264369981834016
+listing_type_Pubs and bars,0.00042144632556644193
+area_Bellandur,0.0003990383344738765
+area_Koramangala 5th Block,0.00035796156879506054
+area_Banashankari,0.0003377672331355055
+area_Koramangala 7th Block,0.0002934672086023182
+area_JP Nagar,0.00026454649510018844
+area_MG Road,0.0002586041163308683
+area_Brigade Road,0.0002567380375665245
+area_Residency Road,0.0002566570710299699
+area_HSR,0.00025663007412413363
+area_Lavelle Road,0.0002552376279324297
+area_Malleshwaram,0.0002502237446745034
+area_Rajajinagar,0.00023876563817583227
+area_Koramangala 4th Block,0.0002367293904781509
+area_Koramangala 6th Block,0.00023383877506523822
+area_Jayanagar,0.0002259947347091317
+area_Church Street,0.0002086565277621378
+area_Basavanagudi,0.00019691584454959837
+area_Indiranagar,0.00018813696027148195
+area_Old Airport Road,0.0001801177768069892
+rest_type_bucketed_Beverage Shop,0.00017514006740253658
+area_Kammanahalli,0.00016959552202608586
+cuisine_bucketed_Street Food,0.00013831091651846515
+area_Kalyan Nagar,0.0001002997272850479
+area_Frazer Town,8.320353078311301e-05
+area_New BEL Road,5.052827332601754e-05

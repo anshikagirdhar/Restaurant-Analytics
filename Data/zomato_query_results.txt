@@ -1,0 +1,140 @@
+====================================================================================================
+Q1. Top 10 restaurants by votes (popularity proxy)
+Why: Closest real substitute for 'top restaurants by revenue' - this dataset has no sales figures, so votes (number of ratings received) stands in as a labeled popularity proxy.
+----------------------------------------------------------------------------------------------------
+                       name                  area primary_cuisine  votes  rating
+Byg Brewski Brewing Company             Bellandur     Continental  16345     4.9
+                       Toit           Indiranagar         Italian  14956     4.7
+                   Truffles                   BTM            Cafe  14654     4.7
+  AB's - Absolute Barbecues          Marathahalli        European  12121     4.8
+            The Black Pearl                   BTM    North Indian  10413     4.7
+                     Onesta                   BTM           Pizza   9041     4.4
+                Big Pitcher           Indiranagar        American   9021     4.7
+      Arbor Brewing Company          Brigade Road        American   8375     4.5
+          Empire Restaurant           Indiranagar    North Indian   8176     4.2
+             Prost Brew Pub Koramangala 4th Block        American   7854     4.5
+
+====================================================================================================
+Q2. Average cost-for-two by area (top 15 by listing volume)
+Why: Answers 'which areas skew premium vs. budget' - a real, direct use of the cost field.
+----------------------------------------------------------------------------------------------------
+                 area  num_listings  avg_cost_for_two
+                  BTM          3254             495.0
+Koramangala 7th Block          2914             520.0
+Koramangala 5th Block          2811             523.0
+Koramangala 4th Block          2751             528.0
+Koramangala 6th Block          2596             521.0
+            Jayanagar          2356             469.0
+             JP Nagar          2088             460.0
+          Indiranagar          1843             653.0
+        Church Street          1786             775.0
+              MG Road          1783             762.0
+         Brigade Road          1766             767.0
+                  HSR          1733             488.0
+         Lavelle Road          1729             753.0
+         Marathahalli          1644             498.0
+    Bannerghatta Road          1614             453.0
+
+====================================================================================================
+Q3. Listing type performance (Delivery/Dine-out/Cafes/etc.)
+Why: Since there's no per-customer order history, this is the closest real proxy to a 'channel mix' question - how does rating/popularity differ by how a restaurant is listed.
+----------------------------------------------------------------------------------------------------
+      listing_type  num_listings  avg_rating  avg_votes
+          Delivery         25880        3.65      204.0
+          Dine-out         17768        3.68      290.0
+          Desserts          3593        3.78      151.0
+             Cafes          1723        3.87      480.0
+Drinks & nightlife          1094        4.01     1143.0
+            Buffet           880        3.98     1006.0
+     Pubs and bars           694        4.02     1002.0
+
+====================================================================================================
+Q4. Votes-proxy contribution by cuisine (NOT real revenue)
+Why: Mirrors 'revenue contribution by cuisine' but explicitly using the votes proxy, labeled as such.
+----------------------------------------------------------------------------------------------------
+primary_cuisine  num_listings  total_votes_proxy  avg_cost_for_two  avg_rating
+   North Indian         12284            3272013             588.0        3.59
+           Cafe          4325            1878555             627.0        3.87
+    Continental          1836            1604619            1119.0        3.98
+       American           532             840749            1194.0        4.16
+        Chinese          3058             707652             599.0        3.65
+        Biryani          3049             566300             416.0        3.53
+          Pizza           650             469790             594.0        3.73
+        Italian           668             441569            1027.0        3.93
+   South Indian          5005             436687             329.0        3.59
+    Finger Food           702             391852            1445.0        3.88
+
+====================================================================================================
+Q5. Online order availability vs. rating/votes/cost
+Why: Tests whether offering online ordering associates with higher popularity or rating.
+----------------------------------------------------------------------------------------------------
+ online_order  num_listings  avg_rating  avg_votes  avg_cost_for_two
+            0         21253       3.658      250.0             599.0
+            1         30379       3.722      307.0             525.0
+
+====================================================================================================
+Q6. Table booking availability vs. cost/rating
+Why: Tests whether bookable restaurants skew premium (higher cost) and/or higher rated.
+----------------------------------------------------------------------------------------------------
+ book_table  num_listings  avg_cost_for_two  avg_rating
+          0         45212             453.0       3.621
+          1          6420            1271.0       4.143
+
+====================================================================================================
+Q7. Top 5 areas by total votes (engagement concentration)
+Why: Identifies where Zomato engagement/popularity is most concentrated geographically.
+----------------------------------------------------------------------------------------------------
+                 area  total_votes  num_listings
+Koramangala 7th Block      1065901          2938
+Koramangala 5th Block      1038064          2834
+Koramangala 4th Block       992065          2778
+Koramangala 6th Block       978900          2623
+                  BTM       978147          3268
+
+====================================================================================================
+Q8. Restaurant type (rest_type) performance
+Why: Which physical restaurant formats (Quick Bites, Casual Dining, etc.) rate best, filtered to types with at least 50 listings so small categories don't dominate the ranking by noise.
+----------------------------------------------------------------------------------------------------
+                  rest_type  num_listings  avg_rating  avg_votes  avg_cost_for_two
+          Pub, Microbrewery            83        4.45     4183.0            1777.0
+Microbrewery, Casual Dining           130        4.37     1206.0            1657.0
+Casual Dining, Microbrewery            59        4.31     2527.0            1509.0
+        Casual Dining, Cafe           319        4.19     1658.0             921.0
+         Casual Dining, Pub           127        4.18     1418.0            1320.0
+                Fine Dining           345        4.15      486.0            2710.0
+       Cafe, Dessert Parlor           148        4.15      370.0             664.0
+       Dessert Parlor, Cafe           175        4.14      787.0             555.0
+         Bar, Casual Dining           420        4.13     1055.0            1355.0
+         Pub, Casual Dining           255        4.09      921.0            1261.0
+         Casual Dining, Bar          1148        4.08     1057.0            1250.0
+        Cafe, Casual Dining           173        4.05     1952.0             815.0
+               Bakery, Cafe            78        4.01      900.0             629.0
+                        Pub           355        3.97     1132.0            1241.0
+               Cafe, Bakery           163        3.95      210.0             608.0
+
+====================================================================================================
+Q9. Cost bracket vs. average rating
+Why: Tests whether spending more correlates with a better-rated experience.
+----------------------------------------------------------------------------------------------------
+cost_bracket  num_listings  avg_rating  avg_votes
+1. Under 300         10967       3.564       48.0
+  2. 300-599         23034       3.592      103.0
+  3. 600-999         10398       3.755      426.0
+4. 1000-1999          5906       4.056     1077.0
+    5. 2000+           983       4.110      851.0
+
+====================================================================================================
+Q10. 'Hidden gems': high rating (>=4.3), below-average votes
+Why: Business-relevant discovery query: well-reviewed restaurants that haven't built up much visibility yet.
+----------------------------------------------------------------------------------------------------
+                                                                            name                  area primary_cuisine  rating  votes
+                                                          Belgian Waffle Factory                   BTM        Desserts     4.9    201
+SantÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ© Spa Cuisine      Old Airport Road    Healthy Food     4.9    246
+                                                          Belgian Waffle Factory                   BTM        Desserts     4.8    186
+                                                          Belgian Waffle Factory             Jayanagar        Desserts     4.8    186
+                                                          Belgian Waffle Factory Koramangala 4th Block        Desserts     4.8    187
+                                                          Belgian Waffle Factory Koramangala 4th Block        Desserts     4.8    187
+                                                          Belgian Waffle Factory Koramangala 5th Block        Desserts     4.8    189
+                                                          Belgian Waffle Factory Koramangala 5th Block        Desserts     4.8    189
+                                                          Belgian Waffle Factory Koramangala 6th Block        Desserts     4.8    189
+                                                          Belgian Waffle Factory Koramangala 6th Block        Desserts     4.8    189
